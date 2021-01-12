@@ -1,0 +1,178 @@
+---
+title: "Assignment1"
+author: "Study Group 10"
+date: "12/01/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+library(readxl)
+library(dplyr)
+library(tidyverse)
+library(Hmisc)
+```
+
+
+## Empirical Finance Assignment 1
+
+This assignment gets you started working with prices and returns. You should do everything in R even though we are only working with six different stocks and it is possible to do some things manually. If you have a sample of hundreds of stocks this might become more difficult.
+
+1. Go to CANVAS and download the data for PS1 Monthly.xlsx. The data was downloaded from the
+CRSP (The Center for Research in Security Prices) data base via WRDS (Wharton Research Service)
+that is available for LBS students. Note the file contains data about Microsoft, ExxonMobil (previously
+Exxon), General Electric, JP Morgan Chase (previously Chemical Banking and Chase Manhattan),
+Intel, Citigroup (previously Primerica and Travellers Group). In addition, the columns vwretd (ewretd)
+and vwredx (ewretx) contain value-weighted (equal-weighted) total returns and total returns excluding
+dividends for the CRSP index that contains stocks from NYSE, AMEX, and NASDAQ. Finally, sprtrn
+contains the total return for the S&P 500 Composite Index.
+
+## Data Investigation
+
+```{r load data}
+# loading the data
+data <- read_excel("PS1_Daily.xlsx")
+janitor::clean_names(data)
+
+# investigating the data
+glimpse(data) 
+summary(data)
+head(data, 5)
+describe(data)
+```
+
+
+## Part II
+2. Make sure you understand how the holding period returns (RET) are calculated
+```{r}
+```
+
+
+3. Use the holding period returns to create a total return index for the MSFT and GE stocks and the S&P
+500 index, which shows the theoretical growth in value of an investment in the stock assuming that
+dividends are reinvested (normalize the start value to 1). Do the same for the returns that abstract
+from dividend payments (i.e., use RETX instead). Plot the investments with and without dividends
+for each stock separately. How do dividends affect the results stock by stock?
+```{r}
+
+```
+
+
+
+4. Normalize the price of GE using the adjusted number of shares. Plot the adjusted price against the
+unadjusted prices. Discuss.
+```{r}
+
+```
+
+
+
+5. The holding period returns are normal returns. Generate a new variable that contains the corresponding
+log returns (LRET). Calculate the mean, variance, skewness, and kurtosis of the normal and the log
+returns. Plot the normal against the log returns for MSFT. Briefly discuss your results!
+```{r}
+
+```
+
+
+
+6. Go to CANVAS and download the data for PS1 Daily.xlsx. This file contains two worksheets.
+HPR Daily contains the daily holding period returns for the six stocks, the S&P 500 Composite Index
+and the value-weighted market portfolio (including dividends) from CRSP. Prices Daily contains the
+prices for the six stocks and the S&P 500 Composite Index.
+```{r}
+
+```
+
+
+
+7. Construct a daily total return index for MSFT and GE stocks and the S&P 500 index and plot them
+against each other. Compare your results with the monthly total return indices from above. Are there
+any differences? Discuss.
+```{r}
+
+```
+
+
+
+8. As before, the holding period returns are normal returns. Create log returns. Calculate the mean,
+variance, skewness, and kurtosis of the normal and log returns. Compare and discuss your results with
+the results from monthly frequency.
+```{r}
+
+```
+
+
+9. Compare the statistical properties of the log holding period return time series both for monthly and
+daily returns. Plot a histogram and discuss how the empirical distributions relate to the normal
+distribution.
+```{r}
+
+```
+
+
+10. Pick three stocks and the S&P 500 index (either you can use MSFT, GE and JPM or adapt the code to
+pick three random stocks). You will need the holding period returns (both normal and log returns)
+and the total return indices you created.
+```{r}
+
+```
+
+
+11. Calculate the covariance matrix for the log return series, using both the returns and returns squared.
+Discuss your results briefly.
+```{r}
+
+```
+
+
+
+12. Plot the ACF (autocorrelation function) for prices, returns, returns squared, and absolute returns.
+Discuss the results!
+```{r}
+
+```
+
+
+
+13. Use the three assets and make up a portfolio by assigning arbitrary portfolio weights. What does it
+imply if you keep the weights fixed over time?
+```{r}
+
+```
+
+
+
+14. Calculate the portfolio returns and use them to calculate the evolution of a $ 1 investment in the
+portfolio over the sample period. Plot the result against the evolution of a $ 1 investment in each of
+the three stocks. Discuss the result.
+```{r}
+
+```
+
+
+
+15. Portfolio theory with matrix algebra: 
+(see assignment)
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
